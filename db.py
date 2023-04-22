@@ -26,6 +26,7 @@ class Database:
             )"""
         )
 
+
         await self.pool.execute(
             """CREATE TABLE IF NOT EXISTS platform_password (
             id SERIAL PRIMARY KEY,
@@ -33,7 +34,9 @@ class Database:
             platform TEXT, 
             password TEXT
             )"""
+        )
 
+        
     async def close_pool(self):
         await self.pool.close()
         print("Pool closed")
