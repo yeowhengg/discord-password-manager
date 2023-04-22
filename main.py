@@ -152,6 +152,7 @@ async def view_saved_password(ctx: commands.Context):
                 await ctx.author.send("Invalid option selected.")
                 await ctx.author.send(choice_output)
                 choice_msg = await bot.wait_for("message", timeout=30)
+                choice = choice_msg.content
                 continue
 
             break
