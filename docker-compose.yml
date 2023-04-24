@@ -26,7 +26,7 @@ services:
     healthcheck:
       interval: 5s
       retries: 10
-      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      test: test: ["CMD-SHELL", "sh -c 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}'"]
     image: postgres:14.1-alpine
     ports:
       - '4001:5432'
